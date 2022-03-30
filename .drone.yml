@@ -5,6 +5,7 @@ clone:
   
 pipeline:
   node:
-    image: node:8.3.0
+    image: node:8.3.1
     commands:
       - yarn install
+  
