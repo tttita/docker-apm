@@ -1,0 +1,17 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: backend
+  image: goland:1.13-alpine
+  environment:
+    USERNAME:
+      from_secret:username
+  commands:
+  - go build
+  - go test 
+  - echo $USERNAME
+  - echo $USERNAME > a.txt
+  - cat a.txt
+  - echo test
